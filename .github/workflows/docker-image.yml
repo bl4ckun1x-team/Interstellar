@@ -1,4 +1,4 @@
-name: Publish image to Docker Hub (main)
+name: Publish image to Docker Hub (latest)
 
 on:
   [workflow_dispatch]
