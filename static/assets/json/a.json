@@ -6,6 +6,12 @@
     "custom": "true"
   },
   {
+    "name": "! [NEW] Request An App",
+    "link": "https://forms.gle/vwdHN3iPz5cLaHaMA",
+    "image": "/assets/media/icons/request.webp",
+    "categories": ["all"]
+  },
+  {
     "name": "Amazon",
     "link": "https://amazon.com/",
     "image": "/assets/media/icons/amazon.webp",
@@ -27,9 +33,7 @@
     "name": "Android",
     "link": "https://now.gg/iframe/snippet?app_pkg=com.uncube.launcher3&partner=interstellar",
     "image": "/assets/media/icons/android.webp",
-    "categories": ["all", "emu", "android"],
-    "say": "Now.gg is currently not working.",
-    "error": true
+    "categories": ["all", "emu", "android"]
   },
   {
     "name": "Temu",
@@ -224,8 +228,8 @@
     "link": "https://youtube.com",
     "image": "/assets/media/icons/youtube.webp",
     "categories": ["all", "social", "stream", "media"],
-    "error": true, 
-    "say": "YouTube is currently not working."    
+    "error": true,
+    "say": "YouTube is currently not working."
   },
   {
     "name": "Invidous (YouTube)",

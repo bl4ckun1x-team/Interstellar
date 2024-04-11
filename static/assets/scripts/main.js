@@ -1,44 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Ads
-  if (localStorage.getItem('ad') === null || localStorage.getItem('ad') === 'on') {
-    localStorage.setItem('ad', 'default');
+  if (localStorage.getItem('ad') === null || localStorage.getItem('ad') === 'default') {
+    localStorage.setItem('ad', 'on')
   }
-  
-  var advDiv = document.getElementById('adv');
+
+  var advDiv = document.getElementById('adv')
   if (advDiv && localStorage.getItem('ad') === 'default') {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = '//oysterscoldtiny.com/1c/c3/8a/1cc38a6899fdf8ba4dfe779bcc54627b.js';
-    advDiv.appendChild(script);
-    console.log('Script inserted inside the adv div.');
+    var script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = '//oysterscoldtiny.com/1c/c3/8a/1cc38a6899fdf8ba4dfe779bcc54627b.js'
+    advDiv.appendChild(script)
+    console.log('Script inserted inside the adv div.')
   } else if (advDiv && localStorage.getItem('ad') === 'off') {
-    advDiv.remove();
-    console.log('The adv div has been removed.');
+    advDiv.remove()
+    console.log('The adv div has been removed.')
   }
+})
 
-  // Analytics
-  if (localStorage.getItem('an') === null || localStorage.getItem('an') === 'on') {
-    localStorage.setItem('an', 'default');
-  }
+// Nav
+var nav = document.querySelector('.fixed-nav-bar')
 
-  if (localStorage.getItem('an') === 'default') {
-    var analyticsScript = document.createElement('script');
-    analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-WKJQ5QHQTJ';
-    analyticsScript.async = true;
-    document.head.appendChild(analyticsScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-WKJQ5QHQTJ');
-
-    console.log('Google Analytics script inserted.');
-  } else if (localStorage.getItem('an') === 'off') {
-    console.log('Google Analytics is disabled');
-  }
-});
+if (nav) {
+  var html = `
+    <div class="fixed-nav-bar-container">
+      <a class="icon" href="/./"><img alt="nav" id="INImg" src="/assets/media/favicon/main.png"/></a>
+    </div>
+    <div class="fixed-nav-bar-right">
+      <a class="navbar-link" href="/./g"><i class="fa-solid fa-gamepad navbar-icon"></i><xn>Ga</xn><xn>mes</xn></a>
+      <a class="navbar-link" href="/./ap"><i class="fa-solid fa-phone navbar-icon"></i><xn>Ap</xn><xn>ps</xn></a>
+      <a class="navbar-link" href="/./t"><i class="fa-solid fa-laptop navbar-icon"></i><xn>Ta</xn><xn>bs</xn></a>
+      <a class="navbar-link" href="/./s"><i class="fa-solid fa-gear navbar-icon settings-icon"></i><xn>Set</xn><xn>tings</xn></a>
+    </div>`
+  nav.innerHTML = html
+}
 
 // Themes
 var themeid = localStorage.getItem('theme')
@@ -267,6 +261,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
     name.textContent = 'World History Encyclopedia'
     localStorage.setItem('name', 'World History Encyclopedia')
     localStorage.setItem('icon', '/assets/media/favicon/worldhistoryencyclopedia.png')
+  } else if (selectedValue === 'Big Ideas Math Assignment Player') {
+    icon.setAttribute('href', '/assets/media/favicon/bim.ico')
+    name.textContent = 'Assignment Player'
+    localStorage.setItem('name', 'Assignment Player')
+    localStorage.setItem('icon', '/assets/media/favicon/bim.ico')
+  } else if (selectedValue === 'Big Ideas Math') {
+    icon.setAttribute('href', '/assets/media/favicon/bim.ico')
+    name.textContent = 'Big Ideas Math'
+    localStorage.setItem('name', 'Big Ideas Math')
+    localStorage.setItem('icon', '/assets/media/favicon/bim.ico')
   }
 })
 // Key
